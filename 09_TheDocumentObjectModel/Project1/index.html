@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="output">
+        <h1>Hello</h1>
+        <div>Test</div>
+        <ul>
+            <li id="one">One</li>
+            <li class="red">Two</li>
+        </ul>
+        <div>Test</div>
+    </div>
+    <script>
+        let outputClassElement = document.querySelector(".output");
+        console.log(outputClassElement.children);
+        // for (let i = 0; i < outputClassElement.children.length; i++) {
+        //     if (outputClassElement.children.item(i) == "<ul>")
+        //     {
+        //         console.log("position");
+        //     }
+            
+        // }
+        let mainList = outputClassElement.children[2];
+        mainList.id = "mainList";
+        let divArray = document.querySelectorAll("div");
+        for (let i = 0; i < divArray.length; i++) {
+            divArray[i].id = "div" + (i + 1);
+            if (i === 0) {
+                divArray[i].stlye = "color: black";
+            }
+            else if (i % 2 === 0) {
+                divArray[i].style = "color: red";
+            } else {
+                divArray[i].style = "color: blue";
+            }
+        }
+        console.dir(divArray)
+    </script>
+</body>
+</html>

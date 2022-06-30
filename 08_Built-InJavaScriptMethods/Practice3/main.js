@@ -7,3 +7,15 @@ let result = s1.concat(s2);
 
 // ExPractice 2
 
+result = "Hello JavaScript";
+let arr_result = result.split(" ");
+console.log(arr_result);
+
+// ExPractice 3
+let hi = "Hi buddy";
+let new_hi = hi.replace("buddy", "Pascal");
+console.log(new_hi);
+
+// ExPractice 4
+let helloHello = "hello hello";
+console.log(helloHello.replace("hello", "oh"));
