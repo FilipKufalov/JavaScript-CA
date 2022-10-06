@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to move last three character to the start of a given string. The string length must be 3.
+    </title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <h2>Show edited string:</h2>
+    <table class="table table-striped" id="showString">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <td scope="col">Original string</th>
+                <td scope="col">Edited string</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+        <!-- <tr>
+            <th scope="row">1</th>
+            <th scope="row">1</th>
+        </tr> -->
+    </table>
+
+    <script>
+        let myTable = document.getElementById("showString");
+        myTable.classList.add("text-center");
+        let counter = 1;
+
+        function addRow(originalString, editString) {
+            let row = document.createElement("tr");
+            
+            let rowHeader = document.createElement("th");
+            rowHeader.setAttribute("scope","row");
+            rowHeader.innerText = counter;
+            counter++;
+
+            let orgStr = document.createElement("td");
+            orgStr.innerText = originalString;
+            // console.log(originalString);
+            
+            let editStr = document.createElement("td");
+            editStr.innerText = editString;
+            // console.log(editString);
+
+            row.appendChild(rowHeader);
+            row.appendChild(orgStr);
+            row.appendChild(editStr);
+
+            myTable.children[1].appendChild(row);
+        }
+
+        function moveCharacters(str = "") {
+            if (str.length >= 3)
+            {
+                let first = str.slice(0,-3);
+                let last = str.slice(-3);
+                addRow(str,`${last}${first}`);
+            }
+        }
+
+        moveCharacters("string1");
+        moveCharacters("kamion");   
+        moveCharacters("Education");        
+
+    </script>
+</body>
+
+</html>

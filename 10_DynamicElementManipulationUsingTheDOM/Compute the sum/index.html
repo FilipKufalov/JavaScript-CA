@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to compute the sum of three elements of an given integers of length 3.</title>
+</head>
+
+<body>
+    <input type="number" name="num1" id="num1" required> +
+    <input type="number" name="num2" id="num2" required> +
+    <input type="number" name="num3" id="num3" required>
+    <input type="button" onclick="numbers()" value="Calculate" id="Calculate">
+    <h2>The sum is</h2>
+    <ul id="sumOfNumbers">
+
+    </ul>
+
+    <script>
+        let sumList = document.getElementById("sumOfNumbers");
+
+        let calculateBtn = document.getElementById("Calculate");
+
+        function numbers() {
+            let number1 = parseInt(document.getElementById("num1").value);
+            let number2 = parseInt(document.getElementById("num2").value);
+            let number3 = parseInt(document.getElementById("num3").value);
+            if (typeof number1 == isNaN) {
+                console.log(typeof number1);
+            } else {
+                simpleSum(number1, number2, number3);
+
+            }
+        }
+
+        function simpleSum(num1, num2, num3) {
+            console.log(num1);
+            sumList.innerHTML += `<li>${num1} + ${num2} + ${num3} = ${num1 + num2 + num3}</li>`;
+        }
+
+        simpleSum(13, 33, 22);
+        simpleSum(13, 21, 22);
+    </script>
+</body>
+
+</html>
